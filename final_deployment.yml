@@ -50,8 +50,8 @@ spec:
         env:
         - name: DB_PASSWORD
           valueFrom:
-            configMapKeyRef:
-              name: svc-postgres
+            secretKeyRef:
+              name: postgres-secret
               key: DB_PASSWORD
         - name: DB_HOST
           valueFrom:
