@@ -4,7 +4,7 @@ Files:
 db directory
 ===========
 
-db directory for the postgres DB container and laoding data
+db directory for the postgres DB container creation and loading data
 
 
 Main directory
