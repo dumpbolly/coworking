@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: svc-postgres
+data:
+  DB_HOST: "10.100.246.96"
+  DB_USERNAME: "pguser"
+  DB_PASSWORD: "pguser"
+  DB_PORT: "5432"
+  DB_NAME: "pguser"
