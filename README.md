@@ -1,5 +1,8 @@
 # coworking
 Files:
+
+db directory for the postgres DB container and laoding data
+
 app.py - Main python app code
 
 config.py - configuration parameters
