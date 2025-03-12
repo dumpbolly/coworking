@@ -1,56 +1,19 @@
-# coworking
-Files:
-
-db directory
-===========
-
-db directory for the postgres DB container creation and loading data
+# docker-nginx-hello-world
+Single page docker nginx 
 
 
-Main directory
-===============
-app.py - Main python app code
+NGINX webserver that serves a simple page containing its hostname, IP address and port as wells as the request URI and the local time of the webserver.
 
-config.py - configuration parameters
+The images are uploaded to Docker Hub -- https://hub.docker.com/r/dockerbogo/docker-nginx-hello-world/.
 
-Dockerfile - specification for generating the dockerfile
+How to run:
+```
+$ docker run -p 8080:80 -d dockerbogo/docker-nginx-hello-world
+```
 
-requirements.txt - requirements file for the docker container on what to install
+Now, assuming we found out the IP address and the port that mapped to port 80 on the container, in a browser we can make a request to the webserver and get the page below: 
 
-
-
-deployment files in deployment folder
-======================================
-
-dbConfigMap.yml - Configmap for the username/port/host/db_name parameters
-
-dbSecret.yml - Create secret password 
-
-final_deployment.yml - Run to create deployment
+![hello_world](./hello_world.png)
 
 
-Suggestion
-===========
-
-1) Specify reasonable Memory and CPU allocation in the Kubernetes deployment configuration
-   
-I would prefer to have a low CPU and memory allocation to the EC2 instances to nodes and keep the desired nodes to be 1 and max to 5
-
-I had to select the t2.small as that was the minimum allowed with the version.
-
-But to get the CPU and memory correct needs watching the utilization on the cloudwatch and then adjusting.
-
-The main drivers for CPU and memory are
-
- >concurrency
-
-2) specify what AWS instance type would be best used for the application? Why?
-   
-I would start with T2.small and change instance type depending on the load and concurrency
-
-4) provide your thoughts on how we can save on costs?
-   
-Keep the desired nodes to be 1
-
-If apps is not used at night , keep the desired node to 1 
-
+Reference: [Docker & Kubernetes](http://bogotobogo.com/DevOps/Docker/Docker_Kubernetes.php)
